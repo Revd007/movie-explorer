@@ -2,39 +2,87 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/movie-icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Explorer - Discover Amazing Movies</title>
-    <meta name="description" content="Discover and explore your favorite movies with Movie Explorer. Search thousands of movies, view detailed information, and build your personal favorites collection.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            animation: {
-              'fade-in': 'fadeIn 0.5s ease-in-out',
-              'slide-up': 'slideUp 0.3s ease-out',
-            },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' },
-              },
-              slideUp: {
-                '0%': { transform: 'translateY(10px)', opacity: '0' },
-                '100%': { transform: 'translateY(0)', opacity: '1' },
-              }
-            },
-            backdropBlur: {
-              'xs': '2px',
-            }
-          }
-        }
+    <meta name="theme-color" content="#1a1a2e" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Movie Explorer - Discover Amazing Movies with Trailers</title>
+    <meta name="description" content="Discover and explore movies with Movie Explorer. Search thousands of films, watch real trailers, view detailed information, and build your personal favorites collection. Built with Vue 2.5.17." />
+    <meta name="keywords" content="movies, film, cinema, trailers, IMDB, movie search, favorites, Vue.js" />
+    <meta name="author" content="Movie Explorer" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Movie Explorer - Discover Amazing Movies" />
+    <meta property="og:description" content="Search movies, watch trailers, and build your personal collection with our beautiful movie discovery app." />
+    <meta property="og:url" content="https://movie-explorer-vue2.vercel.app" />
+    <meta property="og:site_name" content="Movie Explorer" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Movie Explorer - Discover Amazing Movies" />
+    <meta name="twitter:description" content="Professional movie discovery app with real trailers and beautiful design." />
+    
+    <!-- Favicon and Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/movie-icon.svg" />
+    <link rel="mask-icon" href="/movie-icon.svg" color="#1a1a2e" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Performance hints -->
+    <link rel="dns-prefetch" href="//www.omdbapi.com">
+    <link rel="dns-prefetch" href="//www.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Movie Explorer",
+      "description": "Discover and explore movies with trailers and detailed information",
+      "url": "https://movie-explorer-vue2.vercel.app",
+      "applicationCategory": "Entertainment",
+      "operatingSystem": "Any",
+      "permissions": "Safe browsing, Local storage access",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
+    }
     </script>
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
+    
+    <!-- Loading fallback for users with JavaScript disabled -->
+    <noscript>
+      <div style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Inter', sans-serif;
+        color: white;
+        text-align: center;
+        z-index: 9999;
+      ">
+        <div>
+          <h1 style="font-size: 2rem; margin-bottom: 1rem;">🎬 Movie Explorer</h1>
+          <p style="font-size: 1.2rem; opacity: 0.8;">Please enable JavaScript to use this application.</p>
+        </div>
+      </div>
+    </noscript>
   </body>
 </html>

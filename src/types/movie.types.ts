@@ -4,6 +4,10 @@ export interface Movie {
   Year: string;
   Poster: string;
   Type: string;
+  // Optional fields that might be available from search
+  imdbRating?: string;
+  Runtime?: string;
+  Genre?: string;
 }
 
 export interface MovieDetails {
@@ -27,11 +31,12 @@ export interface MovieDetails {
   imdbRating: string;
   imdbVotes: string;
   Type: string;
-  DVD: string;
-  BoxOffice: string;
-  Production: string;
-  Website: string;
+  DVD?: string;
+  BoxOffice?: string;
+  Production?: string;
+  Website?: string;
   Response: string;
+  Error?: string;
 }
 
 export interface Rating {
@@ -44,4 +49,23 @@ export interface SearchResponse {
   totalResults: string;
   Response: string;
   Error?: string;
+}
+
+// Additional types for better app functionality
+export interface ApiError {
+  message: string;
+  status?: number;
+  code?: string;
+}
+
+export interface FavoriteMovie extends Movie {
+  addedAt: string; // ISO date string
+}
+
+export interface PaginationInfo {
+  currentPage: number;
+  totalPages: number;
+  totalResults: number;
+  hasNextPage: boolean;
+  hasPrevPage: boolean;
 } 
